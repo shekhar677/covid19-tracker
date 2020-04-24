@@ -1,0 +1,36 @@
+/* SLIDE_UP TRANSITION */
+.slide-up-enter-active {
+  animation: slideUp .2s
+}
+
+.slide-up-leave-active {
+  animation: slideUp .2s reverse;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0
+  }
+
+  70% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+/* FADE TRANSITION */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .2s
+}
+
+.fade-enter,
+.fade-leave-active,
+.fade-leave-to {
+  opacity: 0
+}
