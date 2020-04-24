@@ -12,22 +12,30 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"apple-touch-icon", sizes:"180x180", href:"/apple-touch-icon.png" },
+      { rel:"icon", type:"image/png", sizes:"32x32", href:"/favicon-32x32.png" },
+      { rel:"icon", type:"image/png", sizes:"16x16", href:"/favicon-16x16.png" },
+      // { rel:"manifest", href:"/site.webmanifest" },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap' }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#18253C' },
   /*
   ** Global CSS
   */
   css: [
+    '~/assets/css/global.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/axios',
+    { src: '~plugins/chart.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -36,6 +44,12 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
   ],
+
+  server: {
+    port: 3000, // default: 3000
+    host: 'localhost', // default: localhost
+  },
+  
   /*
   ** Nuxt.js modules
   */
@@ -51,6 +65,11 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+
+  pageTransition: {
+    name: 'slide-up',
+    mode: 'out-in'
   },
   /*
   ** Build configuration
