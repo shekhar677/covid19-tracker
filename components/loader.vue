@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in" appear>
-    <div v-if="isLoading" @click="bounceIt" class="dialog absolute inset-0 z-10 flex justify-center items-center overflow-hidden select-none">
+    <div v-if="isLoading" @click="bounceIt" class="dialog fixed inset-0 z-10 flex justify-center items-center overflow-hidden select-none">
       <transition name="fade" mode="out-in" appear>
         <div class="info-card bg-grey rounded-lg px-6 py-3 w-64 select-none shadow-lg" :class="{ 'bounce': (bounce == true) }">
           <p class="text-sm mb-2">Please wait...</p>
