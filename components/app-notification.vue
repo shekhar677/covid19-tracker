@@ -9,13 +9,15 @@
       <div v-if="bell" @click="bounceIt" class="bg-white z-10 fixed inset-0 bg-alpha flex justify-center items-center">
         <div class="overflow-y-auto bg-white w-1/2 max-h-screen rounded-md shadow-md p-6 pt-0 m-4" :class="{ 'bounce': (bounce == true) }">
           <div class="flex justify-end">
-            <div @click="toggle" class="select-none text-3xl cursor-pointer px-2">&times;</div>
+            <div @click="toggle" class="select-none cursor-pointer">
+              <svg class="fill-black w-3 h-3 m-2 mt-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 492"><path d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"/></svg>
+            </div>
           </div>
           <div v-if="notification">
-            <p>{{ lastModified }}</p>
+            <p class="text-center mb-3 text-black font-semibold text-xs">{{ formatDate(lastModified) }}</p>
             <div v-for="(notification, i) in notification" :key="i" class="bg-grey-50 rounded-md p-4 my-2">
-              <p class="text-brown text-xs2">{{ formatDate(notification.timestamp) }}</p>
-              <pre class="text-black text-xs font-mt font-semibold" v-html="notification.update">{{ notification.update }}</pre>
+              <p class="text-brown text-xs2">{{ formatUnixDate(notification.timestamp) }}</p>
+              <pre class="text-black text-xs font-mt font-semibold">{{ notification.update }}</pre>
             </div>
           </div>
           <spinner class="shadow-none" v-else></spinner>
@@ -55,25 +57,25 @@ export default {
         this.bounce = false
       }, 500);
     },
-    formatDate(date) {
+    formatUnixDate(date) {
       return moment.unix(date).fromNow();
+    },
+    formatDate(date) {
+      return moment(date).format('ddd DD MMM, hh:mm a');
     },
     getNotification() {
       this.$axios.get('https://api.covid19india.org/updatelog/log.json')
         .then(res => {
-          // this.lastModified = res.headers.last-modified;
-          // this.expires = res.headers.expires;
           this.notification = res.data.sort((a, b) => b.timestamp - a.timestamp);
           this.notification = this.notification.slice(0,5);
+          this.lastModified = res.headers['last-modified'];
+          this.expires = res.headers.expires;
         })
         .catch(err => {
           this.notification = null
         })
     }
-  },
-  // mounted() {
-  //   this.getNotification();
-  // }
+  }
 }
 </script>
 
