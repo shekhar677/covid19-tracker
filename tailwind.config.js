@@ -47,11 +47,21 @@ module.exports = {
         '18': '4.5rem'
       },
       width: {
+        '1-5': '0.4rem',
+        '14': '3.5rem',
         '28': '7rem'
+      },
+      height: {
+        '1-5': '0.4rem',
+        '14': '3.5rem'
       },
       minWidth: {
         '6': '1.5rem',
-        '12': '3rem'
+        '3-5': '3.5rem',
+        '12': '3rem',
+        '14': '14rem',
+        '16': '16rem',
+        'auto': 'auto'
       },
       padding: {
         '1-5': '0.25rem',
@@ -76,7 +86,8 @@ module.exports = {
       },
       fontSize: {
         'xs2': '0.60rem',
-        'xxs': '0.5rem'
+        'xxs': '0.5rem',
+        'xxs2': '0.4rem'
       }
     },
     stroke: theme => ({
