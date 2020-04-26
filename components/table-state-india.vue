@@ -15,7 +15,7 @@
             <div v-for="(district, i) in currentDistricts" :key="i">
               <div class="select-none flex items-center bg-grey-50 hover:shadow-md cursor-pointer pl-4 my-1 rounded-md">
                 <div class="flex items-center w-32 w-full">
-                  <p class="text-xs text-black font-regular self-start w-full p-2-5 py-1 pl-2">{{ district.district }}</p>
+                  <p class="text-xs text-black font-semibold self-start w-full p-2-5 py-1 pl-2">{{ district.district }}</p>
                 </div>
                 <div class="flex justify-start pl-2 items-center w-32 w-full p-2-5">
                   <span class="mr-2 min-w-6 flex items-center">
