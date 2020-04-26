@@ -9,6 +9,7 @@
       <card-india></card-india>
       <!-- </transition-group> -->
       <global-timeline-india></global-timeline-india>
+      <global-daily-india></global-daily-india>
       <table-india></table-india>
       </div>
     <!-- </transition> -->
@@ -33,6 +34,7 @@ import loader from '~/components/loader';
 import cardIndia from '~/components/card-india';
 import tableIndia from '~/components/table-india';
 import globalTimelineIndia from '~/components/global-timeline-india';
+import globalDailyIndia from '~/components/global-daily-india';
 import { preprocessTimeseries, formatDate, formatDateAbsolute } from '~/helper/helper-functions'
 
 export default {
@@ -40,7 +42,8 @@ export default {
     loader,
     cardIndia,
     tableIndia,
-    globalTimelineIndia
+    globalTimelineIndia,
+    globalDailyIndia
   },
   data() {
     return {

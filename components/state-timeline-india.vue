@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loaded">
-      <div class="bg-white rounded-card shadow-sm p-10 pb-5 m-3 mt-6">
+      <div class="bg-white rounded-card shadow-sm p-10 pb-5 m-3 mb-8">
         <div class="flex justify-between items-center mb-8">
           <p class="text-black text-xl font-semibold">Cases Timeline</p>
           <div class="flex items-end mr-5">
@@ -33,7 +33,7 @@
 <script>
 import lineChart from '~/components/charts/line-chart'
 import spinner from '~/components/spinner'
-import { preprocessTimeseries } from '~/helper/helper-functions'
+import { parseStateTimeseries } from '~/helper/helper-functions'
 
 export default {
   components: {
@@ -264,12 +264,8 @@ export default {
   },
   mounted() {
     this.loaded = false;
-    // var chart = document.getElementsByTagName('canvas').getContext('2d');
-    // gradient = chart.createLinearGradient(0, 0, 0, 450);
-    // gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
-    // gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
 
-    this.$axios.get('https://api.covid19india.org/data.json')
+    this.$axios.get('https://api.covid19india.org/states_daily.json')
       .then(res => {
         this.date = []
         this.dailyconfirmed = []
@@ -279,8 +275,11 @@ export default {
         this.totaldeceased = []
         this.totalrecovered = []
 
-        let data = res.data.cases_time_series;
-        data = preprocessTimeseries(data);
+        let d = parseStateTimeseries(res.data);
+        let stCode = $nuxt.$route.params.statecode
+        stCode = stCode.toUpperCase();
+        let data = d[stCode];
+
         data.map((d, i) => {
           this.date.push(this.getMonthDate(new Date(d.date)));
           this.dailyconfirmed.push(d.dailyconfirmed);
@@ -297,8 +296,37 @@ export default {
       })
       .catch(err => {
         this.loaded = false
-        // this.india = null
-      });
+      })
+
+    // this.$axios.get('https://api.covid19india.org/data.json')
+    //   .then(res => {
+    //     this.date = []
+    //     this.dailyconfirmed = []
+    //     this.dailydeceased = []
+    //     this.dailyrecovered = []
+    //     this.totalconfirmed = []
+    //     this.totaldeceased = []
+    //     this.totalrecovered = []
+
+    //     let data = res.data.cases_time_series;
+    //     data = preprocessTimeseries(data);  
+    //     data.map((d, i) => {
+    //       this.date.push(this.getMonthDate(new Date(d.date)));
+    //       this.dailyconfirmed.push(d.dailyconfirmed);
+    //       this.dailydeceased.push(d.dailydeceased);
+    //       this.dailyrecovered.push(d.dailyrecovered);
+    //       this.dailyactive.push(d.dailyactive);
+    //       this.totalconfirmed.push(d.totalconfirmed);
+    //       this.totaldeceased.push(d.totaldeceased);
+    //       this.totalrecovered.push(d.totalrecovered);
+    //       this.totalactive.push(d.totalactive);
+    //     });
+    //     this.xTicks(0, this.date.length);
+    //     this.loaded = true
+    //   })
+    //   .catch(err => {
+    //     // this.india = null
+    //   });
   }
 }
 </script>

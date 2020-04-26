@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  name: 'card-india',
   props: ['cardData']
 }
 </script>
