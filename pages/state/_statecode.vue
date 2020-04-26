@@ -108,12 +108,7 @@ export default {
       this.currentDistricts = this.currentDistricts[0].districtData;
     },
     changeNumber(number) {
-      let n = formatNumber(number);
-      if (n > 0) {
-        return n;
-      } else {
-        return '-'
-      }
+      return formatNumber(number);
     },
   },
   mounted() {

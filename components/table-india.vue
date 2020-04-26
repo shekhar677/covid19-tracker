@@ -121,12 +121,7 @@ export default {
     //   return data.reduce((acc, val) => acc + val[dOut], 0);
     // },
     changeNumber(number) {
-      let n = formatNumber(number);
-      if (n > 0) {
-        return n;
-      } else {
-        return '-'
-      }
+      return formatNumber(number);
     },
     realtiveTime(date) {
       return moment(date, 'DD/MM/YYYY HH:mm:ss').fromNow();

@@ -66,12 +66,7 @@ export default {
   },
   methods: {
     changeNumber(number) {
-      let n = formatNumber(number);
-      if (n > 0) {
-        return n;
-      } else {
-        return '-'
-      }
+      return formatNumber(number);
     },
   }
 }
