@@ -11,10 +11,14 @@
           <div class="flex justify-end">
             <div @click="toggle" class="select-none text-3xl cursor-pointer px-2">&times;</div>
           </div>
-          <div v-for="(notification, i) in notification" :key="i" class="bg-grey-50 rounded-md p-4 my-2">
-            <p class="text-brown text-xs2">{{ formatDate(notification.timestamp) }}</p>
-            <pre class="text-black text-xs font-mt font-semibold" v-html="notification.update">{{ notification.update }}</pre>
+          <div v-if="notification">
+            <p>{{ lastModified }}</p>
+            <div v-for="(notification, i) in notification" :key="i" class="bg-grey-50 rounded-md p-4 my-2">
+              <p class="text-brown text-xs2">{{ formatDate(notification.timestamp) }}</p>
+              <pre class="text-black text-xs font-mt font-semibold" v-html="notification.update">{{ notification.update }}</pre>
+            </div>
           </div>
+          <spinner class="shadow-none" v-else></spinner>
         </div>
       </div>
     </transition>
@@ -23,18 +27,27 @@
 
 <script>
 import moment from 'moment'
+import spinner from '~/components/spinner'
 
 export default {
+  components: {
+    spinner
+  },
   data() {
     return {
       bell: false,
       notification: null,
+      lastModified: null,
+      expires: null,
       bounce: false
     }
   },
   methods: {
     toggle() {
       this.bell = !this.bell
+      if (this.bell) {
+        this.getNotification();
+      }
     },
     bounceIt() {
       this.bounce = true
@@ -48,6 +61,8 @@ export default {
     getNotification() {
       this.$axios.get('https://api.covid19india.org/updatelog/log.json')
         .then(res => {
+          // this.lastModified = res.headers.last-modified;
+          // this.expires = res.headers.expires;
           this.notification = res.data.sort((a, b) => b.timestamp - a.timestamp);
           this.notification = this.notification.slice(0,5);
         })
@@ -56,9 +71,9 @@ export default {
         })
     }
   },
-  mounted() {
-    this.getNotification();
-  }
+  // mounted() {
+  //   this.getNotification();
+  // }
 }
 </script>
 
