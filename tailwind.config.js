@@ -50,7 +50,8 @@ module.exports = {
         '28': '7rem'
       },
       minWidth: {
-        '6': '1.5rem'
+        '6': '1.5rem',
+        '12': '3rem'
       },
       padding: {
         '1-5': '0.25rem',
@@ -74,6 +75,7 @@ module.exports = {
         '14': '0.14'
       },
       fontSize: {
+        'xs2': '0.60rem',
         'xxs': '0.5rem'
       }
     },
@@ -85,19 +87,21 @@ module.exports = {
     fill: theme => ({
       'black': theme('colors.black'),
       'white': theme('colors.white'),
+      'blue': theme('colors.blue'),
       'pink': theme('colors.pink'),
       'brown': theme('colors.brown'),
       'green': theme('colors.green'),
       'yellow': theme('colors.yellow'),
       'orange': theme('colors.orange'),
+      'grey': theme('colors.grey'),
       'grey-50': theme('colors.grey.50'),
       'grey-200': theme('colors.grey.200')
     })
   },
   variants: {
     fontFamily: [],
-    stroke: ['responsive', 'hover'],
-    fill: ['responsive', 'hover'],
+    stroke: ['responsive'],
+    fill: ['responsive'],
   },
   plugins: [],
   // corePlugins: {
