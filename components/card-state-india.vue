@@ -1,11 +1,8 @@
 <template>
   <div>
-    <!-- <div v-if="data" class="flex items-start justify-around"> -->
-      <transition-group name="slide-up" tag="div" class="flex items-start justify-around">
-        <card v-for="(d) in data" :key="d.type" :cardData="d"></card>
-      </transition-group>
-    <!-- </div> -->
-    <!-- <spinner v-else class="m-3"></spinner> -->
+    <transition-group name="slide-up" tag="div" class="flex items-start justify-around">
+      <card v-for="(d) in data" :key="d.type" :cardData="d"></card>
+    </transition-group>
   </div>
 </template>
 

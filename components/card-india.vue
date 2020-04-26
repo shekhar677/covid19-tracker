@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="data.length" class="flex items-start justify-around">
+    <div v-if="data.length" class="sm:flex flex-wrap lg:flex-no-wrap items-start justify-around">
       <card v-for="(d, i) in data" :key="i" :cardData="d"></card>
     </div>
     <spinner v-else class="m-3"></spinner>

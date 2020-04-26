@@ -1,31 +1,19 @@
 <template>
-  <div class="py-8 px-12 min-h-screen">
+  <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
     <loader></loader>
-    <span @click="fetchData('india')" class="btn mr-2 cursor-pointer select-none py-1-5 px-5 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': (currentFetch === 'india') }">India</span>
-    <span @click="fetchData('worldwide')" class="btn cursor-pointer select-none py-1-5 px-5 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': (currentFetch === 'worldwide') }">Worldwide</span>
-    <!-- <transition name="fade" mode="out-in"> -->
+    <div class="mt-3 sm:mt-0">
+      <span @click="fetchData('india')" class="btn mr-2 cursor-pointer select-none py-1-5 px-5 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': (currentFetch === 'india') }">India</span>
+      <span @click="fetchData('worldwide')" class="btn cursor-pointer select-none py-1-5 px-5 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': (currentFetch === 'worldwide') }">Worldwide</span>
+    </div>
       <div v-if="currentFetch === 'india'" class="india mt-8">
-      <!-- <transition-group name="fade" mode="out-in" class="flex items-start justify-around"> -->
       <card-india></card-india>
-      <!-- </transition-group> -->
       <global-timeline-india></global-timeline-india>
       <global-daily-india></global-daily-india>
       <table-india></table-india>
       </div>
-    <!-- </transition> -->
-    <!-- <transition name="fade" mode="out-in"> -->
       <div v-if="currentFetch === 'worldwide'" class="worldwide mt-8">
-        <h1>Under dev</h1>
-        <!-- <div class="flex items-start justify-around">
-          <transition-group name="slide-up" mode="out-in" class="flex items-start justify-around">
-            <card v-for="(info, i) in 5" :key="i" :cardData="{ type: 'confirmed', number: 15669 }"></card>
-          </transition-group>
-        </div>
-        <div>
-          data: {{worldwide}}
-        </div> -->
+        <h1>Under development- will be updated on 28 April, 2020</h1>
       </div>
-    <!-- </transition> -->
   </div>
 </template>
 
