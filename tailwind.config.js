@@ -37,7 +37,10 @@ module.exports = {
         100: '#D6D6D6',
         200: '#9DA6BA'
       },
-      blue: '#4067E8',
+      blue: {
+        default: '#4067E8',
+        lighter: '#B3C4FF'
+      },
       white: '#ffffff'
 
     },
@@ -49,7 +52,8 @@ module.exports = {
       width: {
         '1-5': '0.4rem',
         '14': '3.5rem',
-        '28': '7rem'
+        '28': '7rem',
+        '72': '20rem'
       },
       height: {
         '1-5': '0.4rem',
