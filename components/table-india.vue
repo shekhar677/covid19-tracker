@@ -12,7 +12,7 @@
         <div @click="toggle(index, $event)" class="select-none flex justify-between items-center w-full bg-grey-50 hover:shadow-md cursor-pointer p-1 mb-2 sm:pl-4 sm:my-1 rounded-md">
           <div class="flex items-center w-full">
             <svg class="fill-black w-1-5 h-1-5 sm:w-2 sm:h-2" :class="{ 'rotate': table.visible }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004"><path d="M382.678 226.804L163.73 7.86C158.666 2.792 151.906 0 144.698 0s-13.968 2.792-19.032 7.86l-16.124 16.12c-10.492 10.504-10.492 27.576 0 38.064L293.398 245.9l-184.06 184.06c-5.064 5.068-7.86 11.824-7.86 19.028 0 7.212 2.796 13.968 7.86 19.04l16.124 16.116c5.068 5.068 11.824 7.86 19.032 7.86s13.968-2.792 19.032-7.86L382.678 265c5.076-5.084 7.864-11.872 7.848-19.088.016-7.244-2.772-14.028-7.848-19.108z"/></svg>
-            <p class="text-xs2 sm:text-xs text-black font-semibold self-start w-20 sm:w-32 p-1 sm:p-2-5 py-1 sm:pl-2">{{ table.state }}</p>
+            <p class="text-xs text-black font-semibold self-start w-20 sm:w-32 p-1 sm:p-2-5 py-1 sm:pl-2">{{ table.state }}</p>
           </div>
           <div class="flex justify-start sm:pl-2 items-center min-w-3-5 w-full sm:w-full p-1 sm:p-2-5">
             <span class="mr-1 sm:mr-2 sm:min-w-6 flex items-center" :class="{ 'opacity-0': !(table.deltaconfirmed > 0) }">
@@ -59,7 +59,7 @@
             <div v-for="(district, i) in currentDistrict[0].districtData" :key="i" class="flex flex-col items-start">
               <div class="select-none flex justify-start items-center w-full bg-white hover:shadow-md cursor-pointer sm:pl-4 my-1 rounded-md">
                 <div class="flex items-center w-full">
-                  <p class="text-xs2 sm:text-xs text-black w-20 sm:w-32 font-regular self-start p-1 sm:p-2-5 py-1 sm:pl-2">{{ district.district }}</p>
+                  <p class="text-xs text-black w-20 sm:w-32 font-regular self-start p-1 sm:p-2-5 py-1 sm:pl-2">{{ district.district }}</p>
                 </div>
                 <div class="flex justify-start sm:pl-2 items-center min-w-3-5 w-full sm:w-full p-1 sm:p-2-5">
                   <span class="mr-1 sm:mr-2 sm:min-w-6 flex items-center" :class="{ 'opacity-0': !(district.delta.confirmed > 0) }">
