@@ -66,7 +66,7 @@ export default {
 
   manifest: {
     short_name: 'Covid 19 Tracker',
-    name: 'Covid 19 Tracker - coronavirus case count in India and Worldwide',
+    name: 'Covid 19 Tracker',
     lang: 'en',
     start_url: 'https://pandemic-tracker.netlify.app',
     theme_color: '#18253C',
