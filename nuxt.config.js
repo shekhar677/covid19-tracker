@@ -1,3 +1,6 @@
+var appTitle = 'Covid 19 Tracker - coronavirus case count in India and Worldwide';
+var appDescription = 'The website shows information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, graphically shows the number of cases by state and district.(@shekhargupta677)';
+var appDescription2 = 'Coronavirus in India and worldwide: Latest Case Counts';
 
 export default {
   mode: 'universal',
@@ -5,20 +8,20 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Covid 19 Tracker - coronavirus case count in India and Worldwide',
+    title: appTitle,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { hid: 'description', name: 'description', content: appDescription },
       { name: 'robots', content: 'nofollow' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'Coronavirus in India and worldwide: Latest Case Count and chart, graphs' },
-      { property: 'og:description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { property: 'og:title', content: appDescription2 },
+      { property: 'og:description', content: appDescription2 },
       { property: 'og:image', content: '/icon.png' },
       { property: 'og:url', content: 'https://pandemic-tracker.netlify.app/' },
       { property: 'og:site_name', content: 'Covid 19 Tracker' },
-      { property: 'twitter:title', content: 'Covid 19 Tracker - coronavirus case count in India and Worldwide' },
-      { property: 'twitter:description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { property: 'twitter:title', content: appTitle },
+      { property: 'twitter:description', content: appDescription },
       { property: 'twitter:image', content: '/icon.png' },
       { property: 'twitter:site', content: '@shekhargupta677' },
       { property: 'twitter:creator', content: '@shekhargupta677' }
