@@ -35,7 +35,8 @@ export default {
   */
   plugins: [
     '~/plugins/axios',
-    { src: '~plugins/chart.js', ssr: false }
+    { src: '~plugins/chart.js', ssr: false },
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
