@@ -15,9 +15,12 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/robots": "^2.4.2",
+    "@nuxtjs/sitemap": "^2.2.1",
     "chart.js": "^2.9.3",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
+    "nuxt-jsonld": "^1.4.9",
     "vue-chartjs": "^3.5.0"
   },
   "devDependencies": {

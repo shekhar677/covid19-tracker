@@ -5,18 +5,30 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Covid 19 Tracker - coronavirus case count in India and Worldwide',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { name: 'robots', content: 'nofollow' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Coronavirus in India and worldwide: Latest Case Count and chart, graphs' },
+      { property: 'og:description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { property: 'og:image', content: '/icon.png' },
+      { property: 'og:url', content: 'https://pandemic-tracker.netlify.app/' },
+      { property: 'og:site_name', content: 'Covid 19 Tracker' },
+      { property: 'twitter:title', content: 'Covid 19 Tracker - coronavirus case count in India and Worldwide' },
+      { property: 'twitter:description', content: 'To provide information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, with tables and charts of the number of cases by state and district.(@shekhargupta677)' },
+      { property: 'twitter:image', content: '/icon.png' },
+      { property: 'twitter:site', content: '@shekhargupta677' },
+      { property: 'twitter:creator', content: '@shekhargupta677' }
     ],
     link: [
+      { rel:"canonical", href:"https://pandemic-tracker.netlify.app/" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel:"apple-touch-icon", sizes:"180x180", href:"/apple-touch-icon.png" },
       { rel:"icon", type:"image/png", sizes:"32x32", href:"/favicon-32x32.png" },
       { rel:"icon", type:"image/png", sizes:"16x16", href:"/favicon-16x16.png" },
-      // { rel:"manifest", href:"/site.webmanifest" },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap' }
     ]
   },
@@ -35,6 +47,7 @@ export default {
   */
   plugins: [
     '~/plugins/axios',
+    '~/plugins/jsonld',
     { src: '~plugins/chart.js', ssr: false },
     { src: '~plugins/ga.js', mode: 'client' }
   ],
@@ -49,7 +62,30 @@ export default {
   server: {
     port: 3000, // default: 3000
     host: 'localhost', // default: localhost
-    // '192.168.43.242'
+  },
+
+  manifest: {
+    short_name: 'FT Events',
+    name: 'Feeding Trends | Events',
+    lang: 'en',
+    start_url: 'https://events.feedingtrends.com',
+    theme_color: '#2196F3',
+    background_color: '#2196F3',
+    display: 'standalone',
+    orientation: 'portrait'
+  },
+
+  // robots txt config
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Sitemap: 'https://pandemic-tracker.netlify.app/sitemap.xml'
+  },
+
+  // sitemap config
+  sitemap: {
+    hostname: 'https://pandemic-tracker.netlify.app',
+    gzip: true,
   },
   
   /*
@@ -61,6 +97,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Axios module configuration
