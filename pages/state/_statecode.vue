@@ -1,15 +1,15 @@
 <template>
-  <div class="py-8 px-12 min-h-screen">
+  <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
     <div class="mb-6 text-black">
-      <p class="text-xs font-semibold select-none">
+      <p class="text-xs2 sm:text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
         <span>/</span>
         <span class="ml-1 text-black">{{ stateName($nuxt.$route.params.statecode) }}</span>
       </p>
     </div>
     <div class="mb-8">
-      <h1 class="text-black text-4xl font-semibold">{{ stateName($nuxt.$route.params.statecode) }}</h1>
-      <p v-if="updated" class="text-black text-xs">Last updated {{ updated }}</p>
+      <h1 class="text-black text-2xl sm:text-4xl font-semibold">{{ stateName($nuxt.$route.params.statecode) }}</h1>
+      <p v-if="updated" class="text-black text-xs2 sm:text-xs">Last updated {{ updated }}</p>
     </div>
     <div class="mb-8">
       <card-state-india @updatedAt="getUpdatedDate" :state="$nuxt.$route.params.statecode"></card-state-india>

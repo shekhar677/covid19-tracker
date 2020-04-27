@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="loaded">
-      <div class="bg-white rounded-card shadow-sm p-10 pb-5 m-3 mb-8">
-        <div class="flex justify-between items-center mb-8">
-          <p class="text-black text-xl font-semibold">Daily Confirmed Cases</p>
-          <div class="flex items-end mr-5">
+      <div class="bg-white rounded-card shadow-sm p-2 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
+          <p class="text-black sm:text-base md:text-xl font-semibold mb-3 sm:mb-0">Daily Confirmed Cases</p>
+          <div class="flex items-end sm:mr-5">
             <div class="flex items-center">
               <span class="bg-brown-lighter w-4 h-2 rounded-full mr-1"></span>
               <p class="text-xs2 text-black">Confirmed</p>
@@ -137,8 +137,8 @@ export default {
             // Display, position, and set styles for font
             tooltipEl.style.opacity = 1;
             tooltipEl.style.position = 'absolute';
-            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
-            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX -70 + 'px';
+            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY +10+ 'px';
             tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
             tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
             tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
@@ -158,7 +158,7 @@ export default {
               maxTicksLimit: 7,
               padding: 10,
               stepSize: 1,
-              fontSize: 10,
+              fontSize: 9,
             }
           }],
           xAxes: [{
@@ -169,7 +169,7 @@ export default {
               minRotation: 0,
               lineHeight: '4',
               padding: 0,
-              fontSize: 10
+              fontSize: 9
             },
             gridLines: {
               zeroLineColor: "transparent",

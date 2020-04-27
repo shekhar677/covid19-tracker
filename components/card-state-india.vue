@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition-group name="slide-up" tag="div" class="flex items-start justify-around">
+    <transition-group name="slide-up" tag="div" class="sm:flex flex-wrap lg:flex-no-wrap items-start justify-around">
       <card v-for="(d) in data" :key="d.type" :cardData="d"></card>
     </transition-group>
   </div>

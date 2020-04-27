@@ -160,7 +160,7 @@ export default {
               maxTicksLimit: 7,
               padding: 10,
               stepSize: 1,
-              fontSize: 10,
+              fontSize: 9,
             }
           }],
           xAxes: [{
@@ -171,7 +171,7 @@ export default {
               minRotation: 0,
               lineHeight: '4',
               padding: 0,
-              fontSize: 10
+              fontSize: 9
             },
             gridLines: {
               zeroLineColor: "transparent",
