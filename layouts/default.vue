@@ -1,10 +1,11 @@
 <template>
   <div class="min-h-screen">
     <nav-drawer @drawerEvent="drawerAction"></nav-drawer>
-    <div class="content" :class="{ 'sm:ml-48': drawer, 'sm:ml-20': !drawer }">
+    <div class="content bg-grey" :class="{ 'sm:ml-48': drawer, 'sm:ml-20': !drawer }">
       <navbar></navbar>
-      <div class="main bg-grey relative pb-16 overflow-x-hidden">
+      <div class="main bg-grey relative overflow-x-hidden min-h-screen">
         <nuxt />
+        <app-footer></app-footer>
       </div>
     </div>
   </div>
@@ -13,11 +14,13 @@
 <script>
 import navDrawer from '~/components/navigation-drawer'
 import navbar from '~/components/navbar'
+import appFooter from '~/components/app-footer'
 
 export default {
   components: {
     navDrawer,
-    navbar
+    navbar,
+    appFooter
   },
   data() {
     return {
