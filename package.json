@@ -21,7 +21,8 @@
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "nuxt-jsonld": "^1.4.9",
-    "vue-chartjs": "^3.5.0"
+    "vue-chartjs": "^3.5.0",
+    "vue-fuse": "^2.2.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0"
