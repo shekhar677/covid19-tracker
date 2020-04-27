@@ -65,12 +65,12 @@ export default {
   },
 
   manifest: {
-    short_name: 'FT Events',
-    name: 'Feeding Trends | Events',
+    short_name: 'Covid 19 Tracker',
+    name: 'Covid 19 Tracker - coronavirus case count in India and Worldwide',
     lang: 'en',
-    start_url: 'https://events.feedingtrends.com',
-    theme_color: '#2196F3',
-    background_color: '#2196F3',
+    start_url: 'https://pandemic-tracker.netlify.app',
+    theme_color: '#18253C',
+    background_color: '#ffffff',
     display: 'standalone',
     orientation: 'portrait'
   },
