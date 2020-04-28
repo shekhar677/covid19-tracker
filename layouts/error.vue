@@ -3,10 +3,8 @@
     <h1 class="font-semibold absolute align-404 text-grey-50">404</h1>
     <div class="p-4 py-6 bg-white rounded-lg shadow-md sm:w-2/5 flex flex-col items-center relative z-3">
       <h1 class="text-center text-black font-semibold text-base sm:text-xl mb-2">Oops!<br>Nothing to see here.</h1>
-      <p class="text-center text-black font-semibold text-xs sm:text-base mb-4">You found a broken link</p>
-      <n-link to="/">
-        <span class="btn mr-2 mb-4 inline-block cursor-pointer select-none py-2 px-5 font-normal shadow-md rounded-full bg-black text-white w-28 text-xs text-center">Home</span>
-      </n-link>
+      <p class="text-center text-black text-xs sm:text-base mb-4">You found a broken link</p>
+      <span @click="$router.go('/')" class="btn mr-2 mb-4 inline-block cursor-pointer select-none py-2 px-5 font-normal shadow-md rounded-full bg-black text-white w-28 text-xs text-center">Home</span>
     </div>
   </div>
 </template>
