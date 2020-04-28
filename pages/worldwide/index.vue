@@ -7,9 +7,9 @@
     </div>
     <div class="worldwide mt-8">
       <card-worldwide></card-worldwide>
-      <global-timeline-worldwide></global-timeline-worldwide>
-      <daily-timeline-worldwide></daily-timeline-worldwide>
-      <table-worldwide></table-worldwide>
+      <global-timeline-worldwide class="mt-8"></global-timeline-worldwide>
+      <daily-timeline-worldwide class="mt-8"></daily-timeline-worldwide>
+      <table-worldwide class="mt-8"></table-worldwide>
     </div>
   </div>
 </template>

@@ -6,10 +6,10 @@
       <span @click="fetchData('worldwide')" class="btn cursor-pointer select-none py-1-5 px-5 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': (currentFetch === 'worldwide') }">Worldwide</span>
     </div>
     <div v-if="currentFetch === 'india'" class="india mt-8">
-      <card-india></card-india>
-      <global-timeline-india></global-timeline-india>
-      <global-daily-india></global-daily-india>
-      <table-india></table-india>
+      <card-india class="mt-8"></card-india>
+      <global-timeline-india class="mt-8"></global-timeline-india>
+      <global-daily-india class="mt-8"></global-daily-india>
+      <table-india class="mt-8"></table-india>
     </div>
   </div>
 </template>

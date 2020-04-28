@@ -1,13 +1,13 @@
 <template>
   <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
     <div class="mb-6 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
-      <p class="text-xs2 mb-5 sm:mb-0 sm:text-xs font-semibold select-none">
+      <p class="mb-5 sm:mb-0 text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
         <span>/</span>
         <span class="ml-1 text-black">{{ countryName }}</span>
       </p>
       <div>
-        selection option
+        <select-option :countries="countries" :selectedCountry="selectedCountry"></select-option>
       </div>
     </div>
     <div class="mb-8">
@@ -17,8 +17,8 @@
     <div class="mb-8">
       <card-country :countryCode="$nuxt.$route.params.countrycode"></card-country>
     </div>
-    <country-timeline-worldwide :countryCode="$nuxt.$route.params.countrycode"></country-timeline-worldwide>
-    <country-daily-timeline-worldwide :countryCode="$nuxt.$route.params.countrycode"></country-daily-timeline-worldwide>
+    <country-timeline-worldwide class="mt-8" :countryCode="$nuxt.$route.params.countrycode"></country-timeline-worldwide>
+    <country-daily-timeline-worldwide class="mt-8" :countryCode="$nuxt.$route.params.countrycode"></country-daily-timeline-worldwide>
   </div>
 </template>
 
@@ -26,22 +26,52 @@
 import cardCountry from '~/components/worldwide/card-country-worldwide'
 import countryTimelineWorldwide from '~/components/worldwide/country-timeline-worldwide'
 import countryDailyTimelineWorldwide from '~/components/worldwide/country-daily-timeline-worldwide'
+import selectOption from '~/components/worldwide/select-option-list'
 import moment from 'moment'
 
 export default {
   components: {
     cardCountry,
     countryTimelineWorldwide,
-    countryDailyTimelineWorldwide
+    countryDailyTimelineWorldwide,
+    selectOption
   },
   asyncData({ route, $axios }) {
-    return $axios.get(`https://corona-api.com/countries/${route.params.countrycode}`)
+    return $axios.get('https://corona-api.com/countries')
       .then(res => {
-        return { countryName: res.data.data.name, updated_at: res.data.data.updated_at }
+        let selectedCountry;
+        let countryName;
+        let updated_at;
+        let countries = [];
+
+        res.data.data.map(d => {
+          if (d.code == route.params.countrycode) {
+            selectedCountry = {
+              name: d.name,
+              code: d.code
+            }
+            countryName = d.name
+            updated_at = d.updated_at
+          }
+          countries.push({
+            name: d.name,
+            code: d.code
+          })
+        })
+
+        return { countryName: countryName, selectedCountry: selectedCountry, countries: countries, updated_at: updated_at }
       })
       .catch(err => {
-        return { countryName: route.params.countrycode, updated_at: '' }
+        return { countryName: route.params.countrycode, countries: [], updated_at: '', selectedCountry: '' }
       })
+  },
+  data() {
+    return {
+      countries: [],
+      selectedCountry: '',
+      countryName: '',
+      updated_at: ''
+    }
   },
   methods: {
     fromNow(date) {

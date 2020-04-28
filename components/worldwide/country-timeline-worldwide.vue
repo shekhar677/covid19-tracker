@@ -281,7 +281,7 @@ export default {
         this.totaldeceased.reverse();
         this.totalrecovered.reverse();
         this.totalactive.reverse();
-        this.xTicks(0, this.date.length);
+        this.xTicks(parseInt((this.date.length / 100)*20), this.date.length);
         this.loaded = true
       })
       .catch(err => {

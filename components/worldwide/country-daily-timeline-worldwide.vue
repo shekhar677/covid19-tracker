@@ -229,7 +229,7 @@ export default {
         this.dailyconfirmed.reverse();
         // this.dailydeceased.reverse();
         // this.dailyrecovered.reverse();
-        this.xTicks(parseInt(this.date.length / 2), this.date.length);
+        this.xTicks(parseInt((this.date.length / 100)*40), this.date.length);
         this.loaded = true
       })
       .catch(err => {
