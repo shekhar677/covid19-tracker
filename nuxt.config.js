@@ -1,6 +1,7 @@
 var appTitle = 'Covid 19 Tracker - coronavirus case count in India and Worldwide';
 var appDescription = 'The website shows information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, graphically shows the number of cases by state and district.(@shekhargupta677)';
 var appDescription2 = 'Coronavirus in India and worldwide: Latest Case Counts';
+var url = 'https://coronavirus-info.netlify.app/'
 
 export default {
   mode: 'universal',
@@ -18,7 +19,7 @@ export default {
       { property: 'og:title', content: appDescription2 },
       { property: 'og:description', content: appDescription2 },
       { property: 'og:image', content: '/icon.png' },
-      { property: 'og:url', content: 'https://pandemic-tracker.netlify.app/' },
+      { property: 'og:url', content: url },
       { property: 'og:site_name', content: 'Covid 19 Tracker' },
       { property: 'twitter:title', content: appTitle },
       { property: 'twitter:description', content: appDescription },
@@ -27,7 +28,7 @@ export default {
       { property: 'twitter:creator', content: '@shekhargupta677' }
     ],
     link: [
-      { rel:"canonical", href:"https://pandemic-tracker.netlify.app/" },
+      { rel:"canonical", href: url },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel:"apple-touch-icon", sizes:"180x180", href:"/apple-touch-icon.png" },
       { rel:"icon", type:"image/png", sizes:"32x32", href:"/favicon-32x32.png" },
@@ -72,7 +73,7 @@ export default {
     short_name: 'Covid 19 Tracker',
     name: 'Covid 19 Tracker',
     lang: 'en',
-    start_url: 'https://pandemic-tracker.netlify.app',
+    start_url: url,
     theme_color: '#18253C',
     background_color: '#ffffff',
     display: 'standalone',
@@ -83,12 +84,12 @@ export default {
   robots: {
     UserAgent: '*',
     Allow: '/',
-    Sitemap: 'https://pandemic-tracker.netlify.app/sitemap.xml'
+    Sitemap: `${url}sitemap.xml`
   },
 
   // sitemap config
   sitemap: {
-    hostname: 'https://pandemic-tracker.netlify.app',
+    hostname: url,
     gzip: true,
   },
   
