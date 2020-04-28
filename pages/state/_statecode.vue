@@ -25,11 +25,11 @@
 
 <script>
 import { formatNumber, parseStateTimeseries, getStateName } from '~/helper/helper-functions'
-import cardStateIndia from '~/components/card-state-india';
-import stateTimelineIndia from '~/components/state-timeline-india';
-import stateDailyIndia from '~/components/state-daily-india';
-import tableStateIndia from '~/components/table-state-india';
-import stateOptionList from '~/components/state-option-list';
+import cardStateIndia from '~/components/india/card-state-india';
+import stateTimelineIndia from '~/components/india/state-timeline-india';
+import stateDailyIndia from '~/components/india/state-daily-india';
+import tableStateIndia from '~/components/india/table-state-india';
+import stateOptionList from '~/components/india/state-option-list';
 import moment from 'moment'
 
 export default {

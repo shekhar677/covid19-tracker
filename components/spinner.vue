@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-white rounded-card shadow-sm p-8">
-    <div class="spinner"></div>
-  </div>
+  <transition name="fade">
+    <div class="bg-white rounded-card shadow-sm p-8">
+      <div class="spinner"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
