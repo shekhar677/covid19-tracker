@@ -1,11 +1,14 @@
 <template>
   <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
-    <div class="mb-6 text-black">
-      <p class="text-xs2 sm:text-xs font-semibold select-none">
+    <div class="mb-6 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
+      <p class="text-xs2 mb-5 sm:mb-0 sm:text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
         <span>/</span>
         <span class="ml-1 text-black">{{ stateName($nuxt.$route.params.statecode) }}</span>
       </p>
+      <div>
+        <state-option-list :states="stateData" :selectedState="selectedState($nuxt.$route.params.statecode)"></state-option-list>
+      </div>
     </div>
     <div class="mb-8">
       <h1 class="text-black text-2xl sm:text-4xl font-semibold">{{ stateName($nuxt.$route.params.statecode) }}</h1>
@@ -26,6 +29,7 @@ import cardStateIndia from '~/components/card-state-india';
 import stateTimelineIndia from '~/components/state-timeline-india';
 import stateDailyIndia from '~/components/state-daily-india';
 import tableStateIndia from '~/components/table-state-india';
+import stateOptionList from '~/components/state-option-list';
 import moment from 'moment'
 
 export default {
@@ -33,7 +37,8 @@ export default {
     cardStateIndia,
     stateTimelineIndia,
     stateDailyIndia,
-    tableStateIndia
+    tableStateIndia,
+    stateOptionList
   },
   validate({ params, query, store }) {
     let x = getStateName(params.statecode)
@@ -90,6 +95,11 @@ export default {
     stateName(code) {
       return getStateName(code);
     },
+    selectedState(statecode) {
+      let stCode = statecode.toUpperCase();
+      let p = this.stateData.filter(state => state.statecode == stCode)
+      return p[0]
+    },
     getUpdatedDate(date) {
       this.updated = moment(date, 'DD/MM/YYYY HH:mm:ss').fromNow()
     },
@@ -105,7 +115,11 @@ export default {
     getTopDistricts(state) {
       let statecode = state.toUpperCase();
       this.currentDistricts = this.stateDistrict.filter(dis => dis.statecode == statecode);
-      this.currentDistricts = this.currentDistricts[0].districtData;
+      if (this.currentDistricts.length) {
+        this.currentDistricts = this.currentDistricts[0].districtData;
+      } else {
+        this.currentDistricts = []
+      }
     },
     changeNumber(number) {
       return formatNumber(number);
