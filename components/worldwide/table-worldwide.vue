@@ -69,19 +69,21 @@ export default {
         .then(res => {
           this.tableData = [];
           res.data.data.forEach(d => {
-            let newFormat;
-            newFormat = {
-              country: d.name,
-              code: d.code,
-              active: this.formatNumber(d.latest_data.confirmed - d.latest_data.recovered - d.latest_data.deaths),
-              confirmed: this.formatNumber(d.latest_data.confirmed),
-              deaths: this.formatNumber(d.latest_data.deaths),
-              recovered: this.formatNumber(d.latest_data.recovered),
-              critical: this.formatNumber(d.latest_data.critical),
-              deltaconfirmed: this.formatNumber(d.today.confirmed),
-              deltadeaths: this.formatNumber(d.today.deaths)
+            if (d.code !== 'IN') {
+              let newFormat;
+              newFormat = {
+                country: d.name,
+                code: d.code,
+                active: this.formatNumber(d.latest_data.confirmed - d.latest_data.recovered - d.latest_data.deaths),
+                confirmed: this.formatNumber(d.latest_data.confirmed),
+                deaths: this.formatNumber(d.latest_data.deaths),
+                recovered: this.formatNumber(d.latest_data.recovered),
+                critical: this.formatNumber(d.latest_data.critical),
+                deltaconfirmed: this.formatNumber(d.today.confirmed),
+                deltadeaths: this.formatNumber(d.today.deaths)
+              }
+              this.tableData.push(newFormat)
             }
-            this.tableData.push(newFormat)
           })
         })
         .catch(err => {
