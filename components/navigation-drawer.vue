@@ -6,7 +6,7 @@
       </div>
       <div class="flex sm:flex-col justify-around h-8 sm:min-h-2/5 sm:min-w-0 min-w-full sm:mt-6">
         <n-link to="/" class="flex items-center">
-          <div class="cursor-pointer nav-item p-2 sm:p-2-5 rounded-lg flex flex-shrink-0 justify-center" :class="{ 'nav-active': $nuxt.$route.name == 'index' }">
+          <div class="cursor-pointer nav-item p-2 sm:p-2-5 rounded-lg flex flex-shrink-0 justify-center" :class="{ 'nav-active': ($nuxt.$route.name == 'india' || $nuxt.$route.name == 'worldwide') }">
             <svg class="fill-white sm:fill-black hover:fill-black sm:hover:fill-white sm:w-4 w-4 sm:h-4 h-4" xmlns="http://www.w3.org/2000/svg" width="42.985" height="46.893" viewBox="0 0 42.985 46.893"><g transform="translate(-5.625 -4.5)"><path d="M13.352,51.393h5.862a.98.98,0,0,0,.977-.977V5.477a.98.98,0,0,0-.977-.977H13.352a.98.98,0,0,0-.977.977V50.416A.98.98,0,0,0,13.352,51.393Z" transform="translate(4.973 0)"/><path d="M6.6,39.789h5.862a.98.98,0,0,0,.977-.977V21.227a.98.98,0,0,0-.977-.977H6.6a.98.98,0,0,0-.977.977V38.812A.98.98,0,0,0,6.6,39.789Z" transform="translate(0 11.604)"/><path d="M20.114,43.1h5.837a.985.985,0,0,0,.989-.989V16.739a.985.985,0,0,0-.989-.989H20.114a.985.985,0,0,0-.989.989V42.115A.985.985,0,0,0,20.114,43.1Z" transform="translate(9.946 8.289)"/><path d="M25.875,9.989v37.1a.985.985,0,0,0,.989.989H32.7a.985.985,0,0,0,.989-.989V9.989A.985.985,0,0,0,32.7,9H26.864A.985.985,0,0,0,25.875,9.989Z" transform="translate(14.92 3.315)"/></g></svg>
           </div>
         </n-link>

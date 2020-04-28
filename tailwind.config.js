@@ -117,6 +117,7 @@ module.exports = {
     fontFamily: [],
     stroke: ['responsive'],
     fill: ['responsive'],
+    textColor: ['hover'],
   },
   plugins: [],
   // corePlugins: {

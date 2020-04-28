@@ -46,7 +46,7 @@
         <div v-if="table.visible" class="bg-grey p-2 sm:p-3 sm:px-4 sm:ml-3 rounded-md border border-grey-100">
           <div class="flex justify-start items-center">
             <p class="text-xxs sm:text-xs2 font-semibold text-brown mr-8">last updated {{ realtiveTime(table.lastupdatedtime) }}</p>
-            <n-link :to="'/state/'+table.statecode"><span class="btn mr-2 cursor-pointer select-none px-3 py-1 font-normal rounded-full border border-black text-white bg-black shadow-md text-xs2 text-center whitespace-no-wrap">visit state page</span></n-link>
+            <n-link :to="'/india/state/'+table.statecode"><span class="btn mr-2 cursor-pointer select-none px-3 py-1 font-normal rounded-full border border-black text-white bg-black shadow-md text-xs2 text-center whitespace-no-wrap">visit state page</span></n-link>
           </div>
           <div class="mt-3" v-if="currentDistrict">
             <div class="flex justify-between w-full mb-1 sm:pl-4">

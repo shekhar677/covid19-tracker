@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     updated() {
-      this.$router.push(`/state/${this.selected.statecode}`)
+      this.$router.push(`/india/state/${this.selected.statecode}`)
     }
   }
 }
