@@ -1,10 +1,12 @@
-/* SLIDE_UP TRANSITION */
+/* purgecss start ignore */
+
+
 .slide-up-enter-active {
-  animation: slideUp .2s
+  animation: slideUp .25s
 }
 
 .slide-up-leave-active {
-  animation: slideUp .2s reverse;
+  animation: slideUp .25s reverse;
 }
 
 @keyframes slideUp {
@@ -23,14 +25,16 @@
   }
 }
 
-/* FADE TRANSITION */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .2s
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
 }
 
 .fade-enter,
-.fade-leave-active,
-.fade-leave-to {
+.fade-leave-active {
   opacity: 0
 }
+
+/* purgecss end ignore */
