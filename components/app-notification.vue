@@ -67,7 +67,7 @@ export default {
       this.$axios.get('https://api.covid19india.org/updatelog/log.json')
         .then(res => {
           this.notification = res.data.sort((a, b) => b.timestamp - a.timestamp);
-          this.notification = this.notification.slice(0,6);
+          this.notification = this.notification.slice(0,5);
           this.lastModified = res.headers['last-modified'];
           this.expires = res.headers.expires;
         })
