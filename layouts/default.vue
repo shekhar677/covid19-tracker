@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <div>
     <nav-drawer @drawerEvent="drawerAction"></nav-drawer>
     <div class="content bg-grey" :class="{ 'sm:ml-48': drawer, 'sm:ml-20': !drawer }">
       <navbar></navbar>
