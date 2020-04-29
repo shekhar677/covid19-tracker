@@ -6,7 +6,7 @@
     <svg @click="toggle" v-else class="select-none fill-grey-200 w-5 h-5 sm:w-5 sm:h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="41.153" height="46.989" viewBox="0 0 41.153 46.989"><path d="M19.773,34.381a4.706,4.706,0,0,0,4.689-4.709H15.084A4.706,4.706,0,0,0,19.773,34.381Z" transform="translate(0.803 12.608)" fill="#9da6ba"/><path d="M11.657,8.942l.006.008L7.926,5.223,5.2,7.948l7.127,7.14a15.208,15.208,0,0,0-1.814,7.183V35.222L5.881,39.932v2.342H39.543l4.091,4.107,2.722-2.747-1.368-1.36h.036Z" transform="translate(-5.203 -2.255)" fill="#9da6ba"/><path d="M36.372,23.393A15.307,15.307,0,0,0,24.614,8.558V6.909a3.5,3.5,0,1,0-7.01,0V8.558a14.874,14.874,0,0,0-4.72,2l23.487,23.5Z" transform="translate(-0.534 -3.377)" fill="#9da6ba"/></svg>
 
     <transition name="fade">
-      <div v-if="bell" @click="bounceIt" class="bg-white z-10 fixed inset-0 bg-alpha flex justify-center items-center">
+      <div v-if="bell" @click="bounceIt" class="bg-white z-30 fixed inset-0 bg-alpha flex justify-center items-center">
         <div class="overflow-y-auto size-control bg-white w-11/12 sm:w-3/4 md:w-2/4 max-h-screen rounded-md shadow-md p-3 sm:p-6 pt-0 sm:pt-0 m-4" :class="{ 'bounce': (bounce == true) }">
           <div class="flex justify-end">
             <div @click="toggle" class="select-none cursor-pointer mt-1">
