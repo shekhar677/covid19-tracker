@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white overflow-hidden relative rounded-card shadow-sm p-1 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6 sm:mt-8">
+  <div class="bg-white relative rounded-card shadow-sm p-1 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6 sm:mt-8">
     <div v-if="tableData" class="flex flex-col">
       <div class="flex bg-white justify-between w-full mb-1 sm:pl-4 sticky top-0 text-center sm:text-left">
         <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Country</p>

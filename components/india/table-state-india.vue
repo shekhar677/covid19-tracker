@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="currentDistricts" class="bg-white overflow-hidden relative rounded-card shadow-sm p-1 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6">
+    <div v-if="currentDistricts" class="bg-white relative rounded-card shadow-sm p-1 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6">
       <div>
         <h1 class="text-black text-base px-1 sm:text-xl font-semibold text-center sm:text-left">Districts</h1>
         <div class="p-1 sm:p-3 sm:px-4 rounded-md w-full relative">
