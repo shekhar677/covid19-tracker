@@ -16,7 +16,7 @@
           <div v-if="notification">
             <p class="text-center mb-3 text-black text-xs sm:text-sm">{{ formatDate(lastModified) }}</p>
             <div v-for="(notification, i) in notification" :key="i" class="bg-grey-50 rounded-md p-4 my-2">
-              <p class="text-brown text-xxs sm:text-xs2">{{ formatUnixDate(notification.timestamp) }}</p>
+              <p class="text-orange text-xxs sm:text-xs2">{{ formatUnixDate(notification.timestamp) }}</p>
               <div class="break-spaces text-black text-xs sm:text-sm font-mt font-semibold" v-html="notification.update">{{ notification.update }}</div>
             </div>
           </div>

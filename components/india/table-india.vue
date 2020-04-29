@@ -2,11 +2,11 @@
   <div class="bg-white rounded-card shadow-sm p-1 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6 relative">
     <div v-if="tableData" class="flex flex-col">
       <div class="flex bg-white justify-between w-full mb-1 sm:pl-4 sticky top-0">
-        <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">State</p>
-        <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Confirmed</p>
-        <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Active</p>
-        <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Recovered</p>
-        <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Deaths</p>
+        <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">State</p>
+        <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Confirmed</p>
+        <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Active</p>
+        <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Recovered</p>
+        <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase text-center sm:text-left">Deaths</p>
       </div>
       <div v-for="(table, index) in tableData" :key="index">
         <div @click="toggle(index, $event)" class="select-none flex justify-between items-center w-full bg-grey-50 hover:shadow-md cursor-pointer p-1 mb-2 sm:pl-4 sm:my-1 rounded-md">

@@ -6,11 +6,11 @@
         <div class="p-1 sm:p-3 sm:px-4 rounded-md w-full relative">
           <div class="mt-3">
             <div class="flex bg-white justify-between w-full mb-1 sm:pl-4 sticky top-0">
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">District</p>
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Confirmed</p>
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Active</p>
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Recovered</p>
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Deaths</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">District</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Confirmed</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Active</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Recovered</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Deaths</p>
             </div>
             <div v-for="(district, i) in currentDistricts" :key="i">
               <div class="select-none flex justify-start items-center w-full bg-grey-50 hover:shadow-md cursor-pointer sm:pl-4 my-1 rounded-md">
