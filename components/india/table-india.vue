@@ -50,7 +50,7 @@
           </div>
           <div class="mt-3" v-if="currentDistrict">
             <div class="flex justify-between w-full mb-1 sm:pl-4">
-              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">State</p>
+              <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">District</p>
               <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Confirmed</p>
               <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Active</p>
               <p class="text-xxs sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Recovered</p>
