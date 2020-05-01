@@ -12,8 +12,7 @@
     </div>
     <div class="bg-white rounded-card shadow-md overflow-hidden">
       <div class="p-3 py-4 sm:p-10 sm:py-6">
-        <h1 class="text-black text-sm sm:text-base font-semibold mb-1 leading-relaxed">To date, there are no specific vaccines or medicines for COVID-19.</h1>
-        <h1 class="text-black text-sm sm:text-base font-semibold leading-relaxed">Treatments are under investigation, and will be tested through clinical trials.</h1>
+        <h1 class="text-black text-sm sm:text-base font-semibold mb-1 leading-relaxed">To date, there are no specific vaccines or medicines for COVID-19. <span class="text-blue hover:underline">World Health Organization</span></h1>
       </div>
       <div class="hr bg-grey-100 w-full"></div>
       <div class="p-3 py-4 sm:p-10 sm:py-6 relative overflow-hidden">
