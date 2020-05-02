@@ -56,7 +56,12 @@
 
 <script>
 export default {
-
+  head: {
+    title: 'Prevention of Coronavirus',
+    meta: [
+      { name: 'keywords', content: 'prevention of coronavirus, prevention for coronavirus, corona prevention, coronavirus symptoms prevention, coronavirus symptoms, corona virus prevention, coronavirus tips, coronavirus prevention tips, coronavirus how to prevention, prevention from coronavirus, covid 19 prevention, symptoms of coronavirus, who coronavirus prevention' }
+    ],
+  }
 }
 </script>
 

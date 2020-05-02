@@ -40,7 +40,12 @@
 
 <script>
 export default {
-
+  head: {
+    title: 'Treatment of Coronavirus',
+    meta: [
+      { name: 'keywords', content: 'treatment for coronavirus, treatment of coronavirus, the coronavirus treatment, corona treatment, coronavirus symptoms treatment, treatment to coronavirus, coronavirus treatment news, coronavirus treatment india, covid treatment, coronavirus vaccine, coronavirus treatment china' }
+    ],
+  }
 }
 </script>
 

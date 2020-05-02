@@ -48,7 +48,12 @@
 
 <script>
 export default {
-
+  head: {
+    title: 'Symptoms of Coronavirus',
+    meta: [
+      { name: 'keywords', content: 'psymptoms of coronavirus, the coronavirus symptoms, symptoms of the coronavirus, corona symptoms, coronavirus virus symptoms, symptoms for coronavirus, corona virus symptoms, what are coronavirus symptoms, what are the coronavirus symptoms, what are the symptoms of coronavirus, coronavirus symptoms 2020, symptoms of corona, what is coronavirus, covid 19 symptoms, what is coronavirus symptoms' }
+    ],
+  }
 }
 </script>
 
