@@ -2,7 +2,7 @@ var appTitle = 'Covid 19 Tracker - coronavirus case count in India and Worldwide
 var appDescription = 'The website shows information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, graphically shows the number of cases by state and district.(@shekhargupta677)';
 var appDescription2 = 'Coronavirus in India and worldwide: Latest Case Counts';
 var url = 'https://coronavirus-info.netlify.app/';
-var keywords = 'the coronavirus, coronavirus update, coronavirus cases, thank you coronavirus helpers, coronavirus tips, coronavirus symptoms, usa coronavirus, coronavirus us, coronavirus map, corona, coronavirus news, what is coronavirus, corona virus, coronavirus deaths, coronavirus in us, florida coronavirus, coronavirus china, coronavirus death, italy coronavirus, symptoms of coronavirus, coronavirus new york, cdc, cdc coronavirus, coronavirus california, coronavirus in usa'
+var keywords = 'coronavirus cases, coronavirus symptoms, corona, coronavirus news, corona virus, coronavirus deaths, coronavirus china, italy coronavirus, symptoms of coronavirus, coronavirus new york, cdc coronavirus, coronavirus in usa, coronavirus in india, coronavirus update, coronavirus cases india, coronavirus update india, coronavirus live, coronavirus cases in india, coronavirus latest, corona india, coronavirus in world, coronavirus news india'
 
 export default {
   mode: 'universal',

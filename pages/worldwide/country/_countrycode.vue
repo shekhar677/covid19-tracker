@@ -30,6 +30,11 @@ import selectOption from '~/components/worldwide/select-option-list'
 import moment from 'moment'
 
 export default {
+  head() {
+    return {
+      title: this.countryName? this.countryName+' - Coronavirus in '+this.countryName : 'Coronavirus cases worlwide'
+    }
+  },
   components: {
     cardCountry,
     countryTimelineWorldwide,

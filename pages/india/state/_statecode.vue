@@ -33,6 +33,11 @@ import stateOptionList from '~/components/india/state-option-list';
 import moment from 'moment'
 
 export default {
+  head() {
+    return {
+      title: this.stateName(this.$nuxt.$route.params.statecode)? this.stateName(this.$nuxt.$route.params.statecode)+' - Coronavirus in '+this.stateName(this.$nuxt.$route.params.statecode) : 'Coronavirus cases India'
+    }
+  },
   components: {
     cardStateIndia,
     stateTimelineIndia,
