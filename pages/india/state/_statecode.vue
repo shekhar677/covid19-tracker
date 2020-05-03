@@ -6,7 +6,7 @@
         <span>/</span>
         <span class="ml-1 text-black">{{ stateName($nuxt.$route.params.statecode) }}</span>
       </p>
-      <div>
+      <div v-if="stateData">
         <state-option-list :states="stateData" :selectedState="selectedState($nuxt.$route.params.statecode)"></state-option-list>
       </div>
     </div>
@@ -53,40 +53,40 @@ export default {
       return false
     }
   },
-  asyncData ({ params, app, $axios }) {
-    return $axios.get('https://api.covid19india.org/data.json')
-      .then(res => {
-        let r = res.data.statewise
-          .filter(d => d.statecode !== 'TT')
-            .map(d => {
-              d.active = formatNumber(d.active)
-              d.confirmed = formatNumber(d.confirmed)
-              d.deaths = formatNumber(d.deaths)
-              d.deltaconfirmed = formatNumber(d.deltaconfirmed)
-              d.deltadeaths = formatNumber(d.deltadeaths)
-              d.deltarecovered = formatNumber(d.deltarecovered)
-              d.recovered = formatNumber(d.recovered)
-              return d;
-            })
-        return r;
-      })
-      .then(r => {
-        let statewise = r;
-        return $axios.get('https://api.covid19india.org/v2/state_district_wise.json')
-          .then(res => {
-            let md = res.data.map(d => {
-              if (d.state == 'Uttarakhand') {
-                d.statecode = 'UT'
-              }
-              return d;
-            });
-            return { stateData: statewise, stateDistrict: md }
-          })
-      })
-      .catch(err => {
-        return { stateData: null, stateDistrict: null }
-      })
-  },
+  // asyncData ({ params, app, $axios }) {
+  //   return $axios.get('https://api.covid19india.org/data.json')
+  //     .then(res => {
+  //       let r = res.data.statewise
+  //         .filter(d => d.statecode !== 'TT')
+  //           .map(d => {
+  //             d.active = formatNumber(d.active)
+  //             d.confirmed = formatNumber(d.confirmed)
+  //             d.deaths = formatNumber(d.deaths)
+  //             d.deltaconfirmed = formatNumber(d.deltaconfirmed)
+  //             d.deltadeaths = formatNumber(d.deltadeaths)
+  //             d.deltarecovered = formatNumber(d.deltarecovered)
+  //             d.recovered = formatNumber(d.recovered)
+  //             return d;
+  //           })
+  //       return r;
+  //     })
+  //     .then(r => {
+  //       let statewise = r;
+  //       return $axios.get('https://api.covid19india.org/v2/state_district_wise.json')
+  //         .then(res => {
+  //           let md = res.data.map(d => {
+  //             if (d.state == 'Uttarakhand') {
+  //               d.statecode = 'UT'
+  //             }
+  //             return d;
+  //           });
+  //           return { stateData: statewise, stateDistrict: md }
+  //         })
+  //     })
+  //     .catch(err => {
+  //       return { stateData: null, stateDistrict: null }
+  //     })
+  // },
   data() {
     return {
       stateData: null,
@@ -107,6 +107,29 @@ export default {
     },
     getUpdatedDate(date) {
       this.updated = moment(date, 'DD/MM/YYYY HH:mm:ss').fromNow()
+    },
+    formatData() {
+      let statew = this.statewise.filter(d => d.statecode !== 'TT')
+        .map(d => {
+          d.active = formatNumber(d.active)
+          d.confirmed = formatNumber(d.confirmed)
+          d.deaths = formatNumber(d.deaths)
+          d.deltaconfirmed = formatNumber(d.deltaconfirmed)
+          d.deltadeaths = formatNumber(d.deltadeaths)
+          d.deltarecovered = formatNumber(d.deltarecovered)
+          d.recovered = formatNumber(d.recovered)
+          return d;
+        });
+
+      let districtw = this.districtwise.map(d => {
+        if (d.state == 'Uttarakhand') {
+            d.statecode = 'UT'
+          }
+          return d;
+        });
+
+      this.stateData = statew;
+      this.stateDistrict = districtw
     },
     getTimelineData() {
       this.$axios.get('https://api.covid19india.org/states_daily.json')
@@ -130,9 +153,28 @@ export default {
       return formatNumber(number);
     },
   },
-  mounted() {
-    this.getTimelineData();
-    this.getTopDistricts($nuxt.$route.params.statecode);
+  // mounted() {
+  //   // this.getTimelineData();
+  //   // this.getTopDistricts($nuxt.$route.params.statecode);
+  // },
+  beforeMount() {
+    this.$axios.get('https://api.covid19india.org/data.json')
+      .then(res => {
+        this.statewise = res.data.statewise
+      })
+      .then(() => {
+        this.$axios.get('https://api.covid19india.org/v2/state_district_wise.json')
+          .then(res => {
+            this.districtwise = res.data;
+            this.formatData();
+            this.getTimelineData();
+            this.getTopDistricts($nuxt.$route.params.statecode);
+          })
+      })
+      .catch(err => {
+        this.stateData = null
+        this.stateDistrict = null
+      })
   }
 }
 </script>
