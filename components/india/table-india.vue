@@ -59,7 +59,7 @@
             <div v-for="(district, i) in currentDistrict[0].districtData" :key="i" class="flex flex-col items-start">
               <div class="select-none flex justify-start items-center w-full bg-white hover:shadow-md cursor-pointer sm:pl-4 my-1 rounded-md">
                 <div class="flex items-center w-full">
-                  <p class="text-xs text-black w-20 sm:w-32 font-regular self-start p-1 sm:p-2-5 py-1 sm:pl-2">{{ district.district }}</p>
+                  <p class="text-xs text-black w-20 sm:w-32 self-start p-1 sm:p-2-5 py-1 sm:pl-2">{{ district.district }}</p>
                 </div>
                 <div class="flex justify-start sm:pl-2 items-center min-w-3-5 w-full sm:w-full p-1 sm:p-2-5">
                   <span class="mr-1 sm:mr-2 sm:min-w-6 flex items-center" :class="{ 'opacity-0': !(district.delta.confirmed > 0) }">

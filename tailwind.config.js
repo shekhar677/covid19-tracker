@@ -96,7 +96,6 @@ module.exports = {
     },
     stroke: theme => ({
       'black': theme('colors.black'),
-      'white': theme('colors.white'),
       'grey-50': theme('colors.grey.50'),
     }),
     fill: theme => ({
@@ -108,7 +107,6 @@ module.exports = {
       'green': theme('colors.green'),
       'yellow': theme('colors.yellow'),
       'orange': theme('colors.orange'),
-      'grey': theme('colors.grey'),
       'grey-50': theme('colors.grey.50'),
       'grey-200': theme('colors.grey.200')
     })
