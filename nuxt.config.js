@@ -1,8 +1,8 @@
-var appTitle = 'Covid 19 Tracker - coronavirus case count in India and Worldwide';
+var appTitle = 'Coronavirus Tracker - coronavirus case count in India and Worldwide';
 var appDescription = 'The website shows information about coronavirus in India and worldwide. A detailed country information about coronavirus outbreak, graphically shows the number of cases by state and district.(@shekhargupta677)';
 var appDescription2 = 'Coronavirus in India and worldwide: Latest Case Counts';
 var url = 'https://coronavirus-info.netlify.app/';
-var keywords = 'coronavirus cases, coronavirus symptoms, corona, coronavirus news, corona virus, coronavirus deaths, coronavirus china, italy coronavirus, symptoms of coronavirus, coronavirus new york, cdc coronavirus, coronavirus in usa, coronavirus in india, coronavirus update, coronavirus cases india, coronavirus update india, coronavirus live, coronavirus cases in india, coronavirus latest, corona india, coronavirus in world, coronavirus news india, coronavirus by state'
+var keywords = 'coronavirus cases, coronavirus symptoms, corona, coronavirus news, corona virus, coronavirus deaths, coronavirus china, italy coronavirus, symptoms of coronavirus, coronavirus new york, cdc coronavirus, coronavirus in usa, coronavirus in india, coronavirus update, coronavirus cases india, coronavirus update india, coronavirus live, coronavirus cases in india, coronavirus in world, coronavirus news india, coronavirus by state'
 
 export default {
   mode: 'universal',
@@ -22,7 +22,7 @@ export default {
       { property: 'og:description', content: appDescription2 },
       { property: 'og:image', content: '/icon.png' },
       { property: 'og:url', content: url },
-      { property: 'og:site_name', content: 'Covid 19 Tracker' },
+      { property: 'og:site_name', content: 'Coronavirus Tracker' },
       { property: 'twitter:title', content: appTitle },
       { property: 'twitter:description', content: appDescription },
       { property: 'twitter:image', content: '/icon.png' },
