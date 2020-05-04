@@ -7,7 +7,7 @@
       </span> 
       <span>in India</span>
     </div>
-    <div class="text-center"><a target="_blank" class="font-semibold underline hover:text-blue text-xs uppercase" href="https://twitter.com/shekhargupta677">Shekhar</a></div>
+    <div class="text-center"><a target="_blank" class="font-semibold underline hover:text-blue text-xs uppercase" href="https://www.thedevenv.com">Shekhar</a></div>
   </div>
 </template>
 
