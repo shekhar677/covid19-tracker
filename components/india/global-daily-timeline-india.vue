@@ -1,13 +1,13 @@
 <template>
   <div>
     <div v-if="loaded">
-      <div class="bg-white dark-mode:bg-black-lighter rounded-card shadow-sm p-2 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6">
+      <div class="bg-white rounded-card shadow-sm p-2 sm:p-4 md:p-10 md:pb-5 py-6 md:m-3 mt-6">
         <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
-          <p class="text-black dark-mode:text-grey-50 sm:text-base md:text-xl font-semibold mb-3 sm:mb-0">Daily Confirmed Cases</p>
+          <p class="text-black sm:text-base md:text-xl font-semibold mb-3 sm:mb-0">Daily Confirmed Cases</p>
           <div class="flex items-end sm:mr-5">
             <div class="flex items-center">
               <span class="bg-brown-lighter w-4 h-2 rounded-full mr-1"></span>
-              <p class="text-xs2 text-black dark-mode:text-grey-50">Confirmed</p>
+              <p class="text-xs2 text-black">Confirmed</p>
             </div>
           </div>
         </div>

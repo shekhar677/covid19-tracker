@@ -2,8 +2,8 @@
   <div class="p-3 sm:py-8 sm:px-6 md:px-12">
     <loader></loader>
     <div class="mt-3 sm:mt-0" v-if="currentFetch">
-      <button @click="setDataFor('india')" class="btn mr-2 cursor-pointer select-none py-1 font-normal rounded-full border border-black dark-mode:border-black-lighter dark-mode:bg-black-lighter dark-mode:text-grey-50 text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'india') }">India</button>
-      <button @click="setDataFor('worldwide')" class="btn cursor-pointer select-none py-1 font-normal rounded-full border border-black dark-mode:border-black-lighter dark-mode:bg-black-lighter dark-mode:text-grey-50 text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'worldwide') }">Worldwide</button>
+      <button @click="setDataFor('india')" class="btn mr-2 cursor-pointer select-none py-1 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'india') }">India</button>
+      <button @click="setDataFor('worldwide')" class="btn cursor-pointer select-none py-1 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'worldwide') }">Worldwide</button>
     </div>
     <div class="worldwide mt-8">
       <card-worldwide></card-worldwide>

@@ -2,8 +2,8 @@
   <div class="p-3 sm:py-8 sm:px-6 md:px-12">
     <loader></loader>
     <div class="mt-3 sm:mt-0">
-      <button @click="fetchData('india')" class="btn mr-2 cursor-pointer select-none py-1 font-normal rounded-full border border-black dark-mode:border-black-lighter dark-mode:bg-black-lighter text-black dark-mode:text-grey-50 w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'india') }">India</button>
-      <button @click="fetchData('worldwide')" class="btn cursor-pointer select-none py-1 font-normal rounded-full border border-black dark-mode:border-black-lighter dark-mode:bg-black-lighter text-black dark-mode:text-grey-50 w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'worldwide') }">Worldwide</button>
+      <button @click="fetchData('india')" class="btn mr-2 cursor-pointer select-none py-1 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'india') }">India</button>
+      <button @click="fetchData('worldwide')" class="btn cursor-pointer select-none py-1 font-normal rounded-full border border-black text-black w-28 text-xs text-center" :class="{ 'bg-black text-white shadow-md': ($nuxt.$route.name === 'worldwide') }">Worldwide</button>
     </div>
     <div class="india mt-8">
       <card-india class="mt-8"></card-india>

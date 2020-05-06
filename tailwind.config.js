@@ -30,11 +30,7 @@ module.exports = {
         default: '#FF5C5C',
         lighter: '#FFB3B3'
       },
-      black: {
-        default: '#18253C',
-        lighter: '#202e48',
-        accent: '#273856'
-      },
+      black: '#18253C',
       grey: {
         default: '#F5F6F9',
         50: '#F9F9F9', //#FBFBFB
@@ -49,9 +45,6 @@ module.exports = {
 
     },
     extend: {
-      screens: {
-        'dark-mode': { raw: '(prefers-color-scheme: dark)' }
-      },
       spacing: {
         '1/2': '0.15rem',
         '18': '4.5rem'
@@ -107,8 +100,6 @@ module.exports = {
     }),
     fill: theme => ({
       'black': theme('colors.black'),
-      'black-lighter': theme('colors.black.lighter'),
-      'black-accent': theme('colors.black.accent'),
       'white': theme('colors.white'),
       'blue': theme('colors.blue'),
       'pink': theme('colors.pink'),
@@ -117,7 +108,6 @@ module.exports = {
       'yellow': theme('colors.yellow'),
       'orange': theme('colors.orange'),
       'grey-50': theme('colors.grey.50'),
-      'grey-100': theme('colors.grey.100'),
       'grey-200': theme('colors.grey.200')
     })
   },
@@ -125,8 +115,7 @@ module.exports = {
     fontFamily: [],
     stroke: ['responsive'],
     fill: ['responsive'],
-    textColor: ['hover', 'responsive'],
-    borderColor: ['responsive']
+    textColor: ['hover'],
   },
   plugins: [],
   // corePlugins: {
