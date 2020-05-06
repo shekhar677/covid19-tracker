@@ -2,8 +2,8 @@
   <transition name="fade" mode="out-in" appear>
     <div v-if="isLoading" @click="bounceIt" class="dialog fixed inset-0 z-10 flex justify-center items-center overflow-hidden select-none">
       <transition name="fade" mode="out-in" appear>
-        <div class="info-card bg-grey rounded-lg px-6 py-3 w-64 select-none shadow-lg" :class="{ 'bounce': (bounce == true) }">
-          <p class="text-sm mb-2">Please wait...</p>
+        <div class="info-card bg-grey dark-mode:bg-black-lighter rounded-lg px-6 py-3 w-64 select-none shadow-lg" :class="{ 'bounce': (bounce == true) }">
+          <p class="text-sm mb-2 dark-mode:text-grey-50">Please wait...</p>
           <div class="loader rounded-lg bg-grey-200 w-full overflow-hidden relative">
             <div class="bar h-1 bg-black"></div>
           </div>
@@ -39,6 +39,12 @@ export default {
 <style>
   .dialog {
     background: rgba(0, 0, 0, 0.25);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .dialog {
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .bar {

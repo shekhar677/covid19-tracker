@@ -1,9 +1,9 @@
 <template>
   <div class="h-full">
     <nav-drawer @drawerEvent="drawerAction"></nav-drawer>
-    <div class="content bg-grey" :class="{ 'sm:ml-48': drawer, 'sm:ml-20': !drawer }">
+    <div class="content bg-grey dark-mode:bg-black" :class="{ 'sm:ml-48': drawer, 'sm:ml-20': !drawer }">
       <navbar></navbar>
-      <div class="main bg-grey relative min-h-screen">
+      <div class="main bg-grey dark-mode:bg-black relative min-h-screen">
         <nuxt />
         <app-footer></app-footer>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div class="bg-white rounded-card shadow-sm p-8">
+    <div class="bg-white dark-mode:bg-black-lighter rounded-card shadow-sm p-8">
       <div class="spinner"></div>
     </div>
   </transition>
@@ -36,5 +36,11 @@ export default {
   border-top: 3px solid #18253C;
   border-right: 3px solid transparent;
   animation: spinner .6s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  .spinner:before {
+    border-top: 3px solid #f9f9f9;
+  }
 }
 </style>
