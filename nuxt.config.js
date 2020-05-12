@@ -13,6 +13,7 @@ export default {
     title: appTitle,
     meta: [
       { charset: 'utf-8' },
+      { name: 'google-site-verification', content: 'DtYsIGwyHnK4fYj0XVYcuacvQr74p2r2_vPyg2_7NH8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: appDescription },
       { name: 'keywords', content: keywords },
