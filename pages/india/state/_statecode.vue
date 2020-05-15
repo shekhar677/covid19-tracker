@@ -1,6 +1,6 @@
 <template>
   <div class="p-2 sm:py-8 sm:px-6 md:px-12 min-h-screen">
-    <div class="mb-6 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
+    <div class="mb-6 pt-3 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
       <p class="text-xs2 mb-5 sm:mb-0 sm:text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
         <span>/</span>
