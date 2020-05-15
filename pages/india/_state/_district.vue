@@ -14,7 +14,7 @@
     </div>
     <div class="mb-8">
       <h1 class="text-black text-2xl sm:text-4xl font-semibold">{{ $nuxt.$route.params.district }}</h1>
-      <p class="text-base font-semibold" :class="{ 'text-orange': (zone == 'Red'), 't-orange': (zone == 'Orange'), 'text-green': (zone == 'Green') }">{{ getZoneInfo($nuxt.$route.params.district) }} zone</p>
+      <p class="text-base font-semibold" :class="{ 'text-orange': (zone == 'Red zone'), 't-orange': (zone == 'Orange zone'), 'text-green': (zone == 'Green zone') }">{{ getZoneInfo($nuxt.$route.params.district) }}</p>
     </div>
     <div class="mb-8">
       <card-district-india :district="$nuxt.$route.params.district" :state="$nuxt.$route.params.state"></card-district-india>
@@ -53,7 +53,7 @@ export default {
       let zoneData = '';
       for (let zone in this.zones) {
         if (this.zones[zone].district.toLowerCase() == district.toLowerCase()) {
-          zoneData = this.zones[zone].zone
+          zoneData = this.zones[zone].zone+ ' zone'
         }
       }
       this.zone = zoneData
