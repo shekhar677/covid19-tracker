@@ -19,7 +19,7 @@
     </div>
     <state-timeline-india></state-timeline-india>
     <state-daily-india></state-daily-india>
-    <table-state-india :currentDistricts="currentDistricts"></table-state-india>
+    <table-state-india :currentDistricts="currentDistricts" :stateName="stateName($nuxt.$route.params.statecode)"></table-state-india>
   </div>
 </template>
 

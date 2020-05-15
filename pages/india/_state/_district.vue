@@ -14,6 +14,7 @@
     </div>
     <div class="mb-8">
       <h1 class="text-black text-2xl sm:text-4xl font-semibold">{{ $nuxt.$route.params.district }}</h1>
+      <p class="text-base font-semibold" :class="{ 'text-orange': (zone == 'Red'), 't-orange': (zone == 'Orange'), 'text-green': (zone == 'Green') }">{{ getZoneInfo($nuxt.$route.params.district) }} zone</p>
     </div>
     <div class="mb-8">
       <card-district-india :district="$nuxt.$route.params.district" :state="$nuxt.$route.params.state"></card-district-india>
@@ -42,15 +43,22 @@ export default {
   data() {
     return {
       districts: [],
-      currentState: ''
+      currentState: '',
+      zones: '',
+      zone: ''
     }
   },
   methods: {
-    // selectedDistrict(district) {
-    //   let stCode = statecode.toUpperCase();
-    //   let p = this.stateData.filter(state => state.statecode == stCode)
-    //   return p[0]
-    // },
+    getZoneInfo(district) {
+      let zoneData = '';
+      for (let zone in this.zones) {
+        if (this.zones[zone].district.toLowerCase() == district.toLowerCase()) {
+          zoneData = this.zones[zone].zone
+        }
+      }
+      this.zone = zoneData
+      return zoneData
+    }
   },
   beforeMount() {
     this.$axios.get('https://api.covid19india.org/v2/state_district_wise.json')
@@ -61,7 +69,12 @@ export default {
             this.currentState = state
             this.districts = state.districtData.map(district => district.district)
           }
-        })
+        });
+
+        this.$axios.get('https://api.covid19india.org/zones.json')
+          .then(res => {
+            this.zones = res.data.zones
+          })
       })
       .catch(err => {
         this.districts = []
@@ -71,5 +84,7 @@ export default {
 </script>
 
 <style>
-
+  .t-orange {
+    color: #ff9f2b;
+  }
 </style>
