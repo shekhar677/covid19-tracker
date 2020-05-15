@@ -5,16 +5,34 @@
         <h1 class="text-black text-base px-1 sm:text-xl font-semibold text-center sm:text-left">Districts</h1>
         <div class="p-1 sm:p-3 sm:px-4 rounded-md w-full relative">
           <div class="mt-3">
+            <div class="mb-3 flex flex-col items-start sm:pl-4">
+              <div class="flex items-center mb-1">
+                <div class="w-3 h-3 ml-1 mr-2 sm:w-4 sm:h-4 rounded-full bg-orange"></div>
+                <p class="text-xs font-semibold text-grey-200">Red Zone</p>
+              </div>
+              <div class="flex items-center mb-1">
+                <div class="w-3 h-3 ml-1 mr-2 sm:w-4 sm:h-4 rounded-full" style="background-color:#ff9f2b"></div>
+                <p class="text-xs font-semibold text-grey-200">Orange Zone</p>
+              </div>
+              <div class="flex items-center mb-1">
+                <div class="w-3 h-3 ml-1 mr-2 sm:w-4 sm:h-4 rounded-full bg-green"></div>
+                <p class="text-xs font-semibold text-grey-200">Green Zone</p>
+              </div>
+            </div>
             <div class="flex bg-white justify-between w-full mb-1 sm:pl-4 sticky top-0">
-              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">District</p>
-              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Confirmed</p>
-              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Active</p>
-              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Recovered</p>
-              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 uppercase">Deaths</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 text-center sm:text-left uppercase">District</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 text-center sm:text-left uppercase">Confirmed</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 text-center sm:text-left uppercase">Active</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 text-center sm:text-left uppercase">Recovered</p>
+              <p class="text-xs2 sm:text-xs font-semibold text-grey-200 self-start w-full p-1 sm:p-2-5 text-center sm:text-left uppercase">Deaths</p>
             </div>
             <div v-for="(district, i) in currentDistricts" :key="i">
               <div class="select-none flex justify-start items-center w-full bg-grey-50 hover:shadow-md cursor-pointer sm:pl-4 my-1 rounded-md">
                 <div class="flex items-center w-full">
+                  <div v-if="district.zone == 'Green'" class="w-3 h-3 ml-1 mr-0 sm:mr-2 sm:w-4 sm:h-4 rounded-full bg-green"></div>
+                  <div v-else-if="district.zone == 'Red'" class="w-3 h-3 ml-1 mr-0 sm:mr-2 sm:w-4 sm:h-4 rounded-full bg-orange"></div>
+                  <div v-else-if="district.zone == 'Orange'" class="w-3 h-3 ml-1 mr-0 sm:mr-2 sm:w-4 sm:h-4 rounded-full" style="background-color:#ff9f2b"></div>
+                  <div v-else class="w-3 h-3 ml-1 sm:w-4 sm:h-4 rounded-full"></div>
                   <p class="text-xs text-black w-20 sm:w-32 font-semibold self-start p-1 sm:p-2-5 py-1 sm:pl-2">{{ district.district }}</p>
                 </div>
                 <div class="flex justify-start sm:pl-2 items-center min-w-3-5 w-full sm:w-full p-1 sm:p-2-5">

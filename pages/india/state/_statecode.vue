@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
+  <div class="p-2 sm:py-8 sm:px-6 md:px-12 min-h-screen">
     <div class="mb-6 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
       <p class="text-xs2 mb-5 sm:mb-0 sm:text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
@@ -93,7 +93,8 @@ export default {
       stateDistrict: null,
       updated: null,
       timeline: null,
-      currentDistricts: null
+      currentDistricts: null,
+      districtwise: null
     }
   },
   methods: {
@@ -121,15 +122,8 @@ export default {
           return d;
         });
 
-      let districtw = this.districtwise.map(d => {
-        if (d.state == 'Uttarakhand') {
-            d.statecode = 'UT'
-          }
-          return d;
-        });
-
       this.stateData = statew;
-      this.stateDistrict = districtw
+      this.stateDistrict = this.districtwise
     },
     getTimelineData() {
       this.$axios.get('https://api.covid19india.org/states_daily.json')
@@ -165,10 +159,26 @@ export default {
       .then(() => {
         this.$axios.get('https://api.covid19india.org/v2/state_district_wise.json')
           .then(res => {
-            this.districtwise = res.data;
-            this.formatData();
+            // this.districtwise = res.data;
+            // this.formatData();
             this.getTimelineData();
-            this.getTopDistricts($nuxt.$route.params.statecode);
+            
+            this.$axios.get('https://api.covid19india.org/zones.json')
+              .then(zRes => {
+                let zones = zRes.data.zones
+                this.districtwise = res.data.map(d => {
+                  d.districtData.map(dis => {
+                    zones.forEach(zone => {
+                      if (dis.district == zone.district) {
+                        dis.zone = zone.zone
+                      }
+                    })
+                  })
+                  return d;
+                });
+                this.formatData();
+                this.getTopDistricts($nuxt.$route.params.statecode);
+              })
           })
       })
       .catch(err => {
