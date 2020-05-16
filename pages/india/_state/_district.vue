@@ -4,7 +4,7 @@
       <p class="text-xs2 mb-5 sm:mb-0 sm:text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>
         <span>/</span>
-        <n-link :to="'/india/state/'+currentState.statecode"><span class="mr-1 cursor-pointer hover:underline text-black">{{ $nuxt.$route.params.state }}</span></n-link>
+        <n-link :to="'/india/state/'+currentState.statecode"><span class="mx-1 cursor-pointer hover:underline text-black">{{ $nuxt.$route.params.state }}</span></n-link>
         <span>/</span>
         <span class="ml-1 text-black">{{ $nuxt.$route.params.district }}</span>
       </p>
