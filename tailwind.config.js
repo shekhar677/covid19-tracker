@@ -73,7 +73,8 @@ module.exports = {
       },
       minHeight: {
         '2/5': '40%',
-        '1/2': '50%'
+        '1/2': '50%',
+        'web-kit': '-webkit-fill-available'
       },
       borderRadius: {
         'card': '0.7rem'

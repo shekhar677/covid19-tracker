@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen">
+  <div class="p-3 sm:py-8 sm:px-6 md:px-12 min-h-screen min-h-web-kit">
     <div class="mb-6 text-black flex flex-col sm:flex-row items-start sm:items-center justify-between">
       <p class="mb-5 sm:mb-0 text-xs font-semibold select-none">
         <n-link to="/"><span class="mr-1 cursor-pointer hover:underline text-black">Home</span></n-link>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex justify-center items-center relative overflow-hidden">
+  <div class="min-h-screen min-h-web-kit flex justify-center items-center relative overflow-hidden">
     <h1 class="font-semibold absolute align-404 text-grey-50">404</h1>
     <div class="p-4 py-6 bg-white rounded-lg shadow-md sm:w-2/5 flex flex-col items-center relative z-3">
       <h1 class="text-center text-black font-semibold text-base sm:text-xl mb-2">Oops!<br>Nothing to see here.</h1>
