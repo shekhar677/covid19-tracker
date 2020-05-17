@@ -13,8 +13,9 @@
       </div>
     </div>
     <div class="mb-8">
-      <h1 class="text-black text-2xl sm:text-4xl font-semibold">{{ $nuxt.$route.params.district }}</h1>
-      <p class="text-base font-semibold" :class="{ 'text-orange': (zone == 'Red zone'), 't-orange': (zone == 'Orange zone'), 'text-green': (zone == 'Green zone') }">{{ getZoneInfo($nuxt.$route.params.district) }}</p>
+      <h1 class="text-black text-2xl sm:text-4xl mb-2 font-semibold">{{ $nuxt.$route.params.district }}</h1>
+      <p class="text-sm sm:text-base font-semibold" :class="{ 'text-orange': (zone == 'Red zone'), 't-orange': (zone == 'Orange zone'), 'text-green': (zone == 'Green zone') }">{{ getZoneInfo($nuxt.$route.params.district) }}</p>
+      <p class="text-xs text-black">zone last updated: {{ formatDate(zoneLastUpdated) }}</p>
     </div>
     <div class="mb-8">
       <card-district-india :district="$nuxt.$route.params.district" :state="$nuxt.$route.params.state"></card-district-india>
@@ -45,15 +46,20 @@ export default {
       districts: [],
       currentState: '',
       zones: '',
+      zoneLastUpdated: '',
       zone: ''
     }
   },
   methods: {
+    formatDate(date) {
+      return moment(date, 'DD/MM/YYYY').format('DD MMM, YYYY');
+    },
     getZoneInfo(district) {
       let zoneData = '';
       for (let zone in this.zones) {
         if (this.zones[zone].district.toLowerCase() == district.toLowerCase()) {
           zoneData = this.zones[zone].zone+ ' zone'
+          this.zoneLastUpdated = this.zones[zone].lastupdated
         }
       }
       this.zone = zoneData
