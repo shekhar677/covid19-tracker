@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <select @change="updated" v-model="selected" class="block appearance-none cursor-pointer w-full bg-white text-black text-xs sm:text-sm py-2 px-4 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white">
+    <select @change="updated" v-model="selected" class="block appearance-none cursor-pointer w-full bg-white border border-grey-200 text-black text-xs sm:text-sm py-2 px-4 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white">
       <option class="bg-white text-sm" v-for="country in countries" :key="country.code" :value="country">{{ country.name }}</option>
     </select>
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
