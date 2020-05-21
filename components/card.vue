@@ -16,7 +16,11 @@
       </div>
       <div class="mt-4 flex flex-col items-center">
         <p class="text-black text-xl sm:text-2xl font-bold">{{ cardData.value }}</p>
-        <p class="text-sm sm:text-base text-grey-200 capitalize">{{ cardData.type }}</p>
+        <span class="mr-1 sm:mr-2 sm:min-w-6 flex items-center" v-if="cardData.deltaValue > 0 || cardData.deltaValue > '0'">
+          <svg class="w-2 h-2 mr-1/2" :class="{ 'fill-brown': (cardData.type == 'confirmed'), 'fill-pink': (cardData.type == 'active'), 'fill-green': (cardData.type == 'recovered'), 'fill-orange': (cardData.type == 'deaths') }" xmlns="http://www.w3.org/2000/svg" width="43.112" height="44.242" viewBox="0 0 43.112 44.242"><path d="M3.286,27.678,1.093,25.486a2.36,2.36,0,0,1,0-3.347l19.186-19.2a2.36,2.36,0,0,1,3.347,0L42.813,22.129a2.36,2.36,0,0,1,0,3.347l-2.192,2.192a2.373,2.373,0,0,1-3.387-.04L25.908,15.74V44.119a2.364,2.364,0,0,1-2.37,2.37h-3.16a2.364,2.364,0,0,1-2.37-2.37V15.74L6.672,27.639A2.355,2.355,0,0,1,3.286,27.678Z" transform="translate(-0.397 -2.247)"/></svg>
+          <span class="text-xs font-semibold" :class="{ 'text-brown': (cardData.type == 'confirmed'), 'text-pink': (cardData.type == 'active'), 'text-green': (cardData.type == 'recovered'), 'text-orange': (cardData.type == 'deaths') }">{{ (cardData.deltaValue > 0 || cardData.deltaValue > '0')? cardData.deltaValue : 0 }}</span>
+        </span>
+        <p class="mt-1 text-sm sm:text-base text-grey-200 capitalize">{{ cardData.type }}</p>
       </div>
     </div>
   </div>
