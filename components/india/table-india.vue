@@ -166,7 +166,7 @@ export default {
     fetchData() {
       this.$axios.get('https://api.covid19india.org/data.json')
         .then(res => {
-          this.tableData = res.data.statewise.filter(d => d.statecode !== 'TT').map(d => {
+          this.tableData = res.data.statewise.filter(d => (d.statecode !== 'TT' && d.statecode !== 'UN')).map(d => {
             d.active = formatNumber(d.active)
             d.confirmed = formatNumber(d.confirmed)
             d.deaths = formatNumber(d.deaths)
